@@ -9,7 +9,41 @@
 
 // Creo un alert che mi mostra un array di 5 numeri casuali
 var numeriCasuali = [];
-numeriCasuali= alert('I numeri da ricordare sono: ' + generaNumeri(1, 100));
+numeriCasuali = (generaNumeri(1, 100));
+console.log(numeriCasuali);
+alert('I numeri da ricordare sono: ' + numeriCasuali);
+
+
+
+// Creo variabile punteggio
+var punteggio = 0;
+
+// Funzione partita
+var inizioPartita = setTimeout(function(){
+    var arrayInputUtente = [];
+    for(var i = 1; i <= 5; i++) {
+        var numeroUtente = [i];
+        numeroUtente = parseInt(prompt('Inserisci un numero'));
+        
+        while(arrayInputUtente.includes(numeroUtente)) {
+            numeroUtente = parseInt(prompt('Per favore, inserisci un numero che non hai già inserito!'));
+        }
+        arrayInputUtente.push(numeroUtente);
+        console.log('I numeri inseriti dall\' utente sono: ' + arrayInputUtente);
+        
+        if (numeriCasuali.includes(numeroUtente)) {
+            punteggio++;
+        }
+    }
+
+    if (punteggio < 5) {
+        console.log('Partita terminata, il tuo punteggio è: ' + punteggio);
+        alert('Partita terminata, il tuo punteggio è: ' + punteggio);
+    } else {
+        console.log('Complimenti, hai ricordato tutti e cinque i numeri!');
+        alert('Complimenti, hai ricordato tutti e cinque i numeri!');
+    }
+}, 30000);
 
 // Creo una funzione che mi generi numeri casuali
 function generaNumeri(min, max) {
