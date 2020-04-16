@@ -41,7 +41,7 @@ var inizioPartita = setTimeout(function(){
         console.log('Complimenti, hai ricordato tutti e cinque i numeri!');
         alert('Complimenti, hai ricordato tutti e cinque i numeri!');
     }
-}, 100);
+}, 30000);
 
 // Creo una funzione che mi generi numeri casuali
 function generaNumeri(min, max) {
